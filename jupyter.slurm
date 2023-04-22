@@ -37,29 +37,22 @@ Job starts at: $(date)
 
 Step 1 :
 
-If you are working in NYU campus, please open an iTerm window, run command
+Ensure your Cisco AnyConnect is running, open a terminal, run command
 
 ssh -L $port:localhost:$port $USER@greene.hpc.nyu.edu
 
-If you are working off campus, you should already have ssh tunneling setup through HPC bastion host, 
-that you can directly login to greene with command
-
-ssh $USER@greene
-
-Please open an iTerm window, run command
-
-ssh -L $port:localhost:$port $USER@greene
+If you get an error saying "Host Key Verification faile" run command 
+ssh-keygen -R greene.hpc.nyu.edu
 
 Step 2:
 
-Keep the iTerm windows in the previouse step open. Now open browser, find the line with
+Keep the terminal windows in the previouse step open. Now open browser, find the line with
 
 The Jupyter Notebook is running at: $(hostname)
 
 the URL is something: http://localhost:${port}/?token=XXXXXXXX (see your token below)
 
-you should be able to connect to jupyter notebook running remotly on greene compute node with above url
-
+Open your browser and copy paste the URL to open Jupyter. Incase there is nothing below this, wait and open this file in a while.
 EOF
 
 unset XDG_RUNTIME_DIR
@@ -71,9 +64,9 @@ if [ -e /dev/nvidia0 ]; then nv="--nv"; fi
 
 mkdir /tmp/$USER
 export SINGULARITY_CACHEDIR=/tmp/$USER
-
+echo "Jupyter is starting..."
 cp -rp /scratch/DL23SP/dataset_v2.sqsh /tmp
-echo "Dataset is copied to /tmp"
+echo "Dataset is copied to /dataset"
 
 singularity exec $nv \
 	    --bind /scratch \
