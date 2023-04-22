@@ -3,7 +3,7 @@
 ## Setup
 
 1. Download and connect Cisco VPN
-2. ssh <NetID>@greene.hpc.nyu.edu 
+2. ssh `NetID`@greene.hpc.nyu.edu 
 3. ssh burst
 4.  srun --partition=interactive --account csci_ga_2572_2023sp_14 --pty /bin/bash 
 5. cd /scratch/<netid>
