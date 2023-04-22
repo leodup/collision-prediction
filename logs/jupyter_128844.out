@@ -1,0 +1,30 @@
+
+Jupyter server is running on: b-3-186
+Job starts at: Sat Apr 22 16:10:52 EDT 2023
+
+Step 1 :
+
+If you are working in NYU campus, please open an iTerm window, run command
+
+ssh -L 22427:localhost:22427 dks7920@greene.hpc.nyu.edu
+
+If you are working off campus, you should already have ssh tunneling setup through HPC bastion host, 
+that you can directly login to greene with command
+
+ssh dks7920@greene
+
+Please open an iTerm window, run command
+
+ssh -L 22427:localhost:22427 dks7920@greene
+
+Step 2:
+
+Keep the iTerm windows in the previouse step open. Now open browser, find the line with
+
+The Jupyter Notebook is running at: b-3-186
+
+the URL is something: http://localhost:22427/?token=XXXXXXXX (see your token below)
+
+you should be able to connect to jupyter notebook running remotly on greene compute node with above url
+
+Dataset is copied to /tmp
