@@ -56,7 +56,7 @@ class decoder_block(nn.Module):
         return x
     
 
-class UNet(nn.Module):
+class UNet_Masker(nn.Module):
     def __init__(self):
         super().__init__()
 
