@@ -32,5 +32,5 @@ singularity exec --nv \
 --overlay /tmp/dataset_v2.sqsh \
 /share/apps/images/cuda11.7.99-cudnn8.5-devel-ubuntu22.04.2.sif \
 /bin/bash -c "
-python3 predictor.py
+python3 WNet/predictor.py
 "
