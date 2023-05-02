@@ -17,7 +17,7 @@
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=24
 
-#SBATCH --time=2:00:00
+#SBATCH --time=6:00:00
 #SBATCH --output=logs/jupyter_%j.out
 #SBATCH --exclusive
 #SBATCH --requeue
