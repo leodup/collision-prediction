@@ -21,11 +21,11 @@ Our solution consists of two [UNet](https://arxiv.org/abs/1505.04597) models. We
 
 3. We can now train our Predictor model in [Predictor.ipynb](./WNet/Predictor.ipynb). The model can be trained on the aforementioned `masks.pt` data alone, with `val_masks.pt` for validation. This implementation is the default in the notebook. However, with some simple changes, the unlabeled data can be incorporated as well. Below, two approaches are explained (Changed must be made at indicated location under the _Load Data_ header in [Predictor.ipynb](./WNet/Predictor.ipynb)):
 
-  * __Use full unlabeled data:__ Comment line 0 and uncomment lines 1, 2, and 3. 
+    * __Use full unlabeled data:__ Comment line 0 and uncomment lines 1, 2, and 3. 
 
-  * __Use reduced unlabeled data:__ Comment line 0 and uncomment lines 1, 2, 3 __and__ 4. 
+    * __Use reduced unlabeled data:__ Comment line 0 and uncomment lines 1, 2, 3 __and__ 4. 
 
-  The tensors created by this can be saved and loaded into a new kernel to preserve memory. The best Predictor model weights will be saved into [./WNet/predictor_models](./WNet/predictor_models) as `best_predictor.pth`. We recommend renaming this to a unique name to avoid overwiting in the future. We use `predictor.pth`.
+    The tensors created by this can be saved and loaded into a new kernel to preserve memory. The best Predictor model weights will be saved into [./WNet/predictor_models](./WNet/predictor_models) as `best_predictor.pth`. We recommend renaming this to a unique name to avoid overwiting in the future. We use `predictor.pth`.
 
 
 4. Having settle both the Masker and Predictor model architectures, two .py files ([UNet_Masker.py](./WNet/UNet_Masker.py) & [UNet_Predictor.py](./WNet/UNet_Predictor.py)) were created for the respective models to facilitate the importing of these model architectures.
