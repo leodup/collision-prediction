@@ -11,9 +11,7 @@ Our solution consists of two [UNet](https://arxiv.org/abs/1505.04597) models. We
 0. A copy of the original data is available for download at this [link](https://drive.google.com/file/d/1bHl4sEOBRDXN3Hsb6aBIoY1piPj1-Bd2/view?usp=sharing). Unzipping this in the ./WNet/data directory will create a __Dataset_Student__ folder with train, val, and unlabeled folders, each with thousands of examples of data.
 
 
-1. _Note: We have stored the training and validation data tensors in our submission. Therefore, you may skip to __step 2__._
-
-    The [Data.ipynb](./WNet/Data.ipynb) notebook converts the images in the train, val, and unlabeled folders into PyTorch tensors. This will generate the `imgs.pt`, `val_imgs.pt`, `masks.pt`, `val_masks.pt`, and `unlabeled_imgs.pt` files (no masks are provided for the unlabeled set). These all live in [./WNet/data](./WNet/data). _Note: although we have provided the code for generating `unlabeled_imgs.pt`, we encourage the use of our lazy loading implementation that directly converts the raw images into a segmentation mask tensor. This is covered in the following step._
+1. The [Data.ipynb](./WNet/Data.ipynb) notebook converts the images in the train, val, and unlabeled folders into PyTorch tensors. This will generate the `imgs.pt`, `val_imgs.pt`, `masks.pt`, `val_masks.pt`, and `unlabeled_imgs.pt` files (no masks are provided for the unlabeled set). These all live in [./WNet/data](./WNet/data). _Note: although we have provided the code for generating `unlabeled_imgs.pt`, we encourage the use of our lazy loading implementation that directly converts the raw images into a segmentation mask tensor. This is covered in the following step._
 
 
 2. Now that we have our data tensors, we can move onto the [Masker.ipynb](./WNet/Masker.ipynb) notebook. Here, we will train our Masker model using `imgs.pt` and `masks.pt`, along with our validation tensors for verification of performance. The best Masker model weights will be saved into [./WNet/masker_models](./WNet/masker_models) as `best_masker.pth`. We recommend renaming this to a unique name to avoid overwiting in the future. We use `masker.pth`.
