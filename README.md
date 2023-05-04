@@ -1,4 +1,6 @@
-# Collision Prediction
+# Collision Prediction: 
+
+__Placed 2nd in the Final Competition__ (31 Teams total)
 
 This __collision-prediction__ repository contains Léo Dupire and Dhruv Shetty's final project code submission for the NYU graduate Deep Learning course taught by Yann LeCun and Alfredo Canziani. We are responding to the prompt specified in the [Deep_Learning_2023_Spring.pdf](./Deep_Learning_2023_Spring.pdf) file. In a few sentences, the task is as follows. _The model takes 11 consecutive images of objects (varying shape, color, and material) moving on a smooth white surface. The model must predict the segmenation mask of the scene after another 11 frames: i.e. the model must predict what position the objects will be in on the 22nd frame, approximating the underlying physics behind each object (velocity, material, collision properties, etc.)._ An example image-mask pair is shown below.
 
@@ -33,3 +35,11 @@ Our solution consists of two [UNet](https://arxiv.org/abs/1505.04597) models. We
     Now we can build the WNet model! The [WNet.ipynb](./WNet/WNet.ipynb) notebook can be run without training as we already have two trained models (Masker & Predictor). This is what gave us our best final Jaccard Index score of 0.4212 on the validation set. To use this best-performing model, all cells in the notebook can be run apart from those under a 'Training' header and those under the 'Option 2' header. This will generate the predictions on the hidden set at the end of the notebook.
 
     Although it was unfruitful in our attempts, we have left the training options available in the notebook - we didn't get far into our experimentation with this. 'Option 1' will train the WNet model on the unchanged training image data, whereas 'Option 2' will train the WNet model on the unlabeled mask data. The reasoning behind training the WNet model itself is that we are then training the model on the true task it is trying to solve (predicting the 22nd image), as opposed to training the predictor on the subtask of predicting the next mask (predicting the 12th image).
+
+## Final Standings
+
+Our team placed 2nd out of 31 teams in the competition. This gave us the opportunity to present our model architecture in front of Yann LeCun, Alfredo Canziani, and the entire graduate class. Below is a diagram curtosy of Jiachen Zhu (teaching assistant) showing the model performances of each group. 
+
+![Alt](./scores.png "Team Scores")
+
+The link to the presentation and subsequent Q&A will be posted below once made available.
